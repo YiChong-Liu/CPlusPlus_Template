@@ -1,0 +1,27 @@
+﻿#include<iostream>
+#include<cmath>
+using namespace std;
+
+int Weishu(int num) {
+	int sum = 0;
+	while (num > 0) {
+		num /= 10;
+		sum++;
+	}
+	return sum;
+}
+
+bool IsHuiwen(int num) {
+	int all = Weishu(num) - 1, sum = 0, temp = num;
+	while (temp> 0) {
+		int a = temp % 10;
+		sum += a*pow(10, all--);
+		temp = (temp - a) / 10;
+	}
+	return sum == num;
+}
+
+int main() {
+	cout << endl;
+	return 0;
+}
