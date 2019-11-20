@@ -24,7 +24,7 @@ public:
 	double getX() { return x; }
 	double getY(){ return y; }
 
-	void showCode() {
+	static void showCode() {//静态成员函数
 		cout << "Object code is:" << code << endl;
 	}
 
@@ -35,9 +35,12 @@ int Point::code = 0;
 int main() {
 	Point a(4, 5);
 	cout << "Point A:(" << a.getX() << "," << a.getY() << ")" << endl;
-	a.showCode();
+	a.showCode();//静态数据成员
+	Point::showCode();//静态函数成员
+
 	Point b(a);
 	cout << "Point B:(" << b.getX() << "," << b.getY() << ")" << endl;
 	b.showCode();
+	Point::showCode();
 	return 0;
 }
